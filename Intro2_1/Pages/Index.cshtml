@@ -1,11 +1,21 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Bestandsupload";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
 
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="fileInput">Selecteer een JPEG bestand (.jpeg):</label>
+        <input type="file" class="form-control-file" id="fileInput" name="File" />
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+
+
+<div class="mt-4">
+    <p>@Model.ResultMessage</p>
+</div>
